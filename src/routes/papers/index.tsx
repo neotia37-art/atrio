@@ -21,11 +21,11 @@ function PaperIndex() {
       <main className="mx-auto max-w-6xl px-5 py-12">
         <p className="text-sm font-medium text-brass">카테고리 · 작성·보관</p>
         <h1 className="mt-2 max-w-3xl font-serif text-4xl font-semibold">
-          임차인 법인대표만 작성하고 보관하는 서류
+          대표님만 쓰시고 보관하시는 서류
         </h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted">
-          사택 계약에서 임차인은 법인이고, 아래 네 가지는 그 대표만 씁니다. 임대인에게 내는 등기사항증명서나
-          인감증명서와 다릅니다. 작성한 원본은 대표 보관철에 두고, 이 사이트에는 올리지 않습니다.
+          회사가 사택으로 집을 빌리실 때, 아래 네 가지는 대표님만 쓰십니다. 저희에게 내시는 등기부나
+          인감증명서와는 다릅니다. 쓰신 원본은 대표님 서류철에 두시고, 이 사이트에는 올리지 않으셔도 됩니다.
         </p>
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {papers.map((post, index) => (

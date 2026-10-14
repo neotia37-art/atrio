@@ -20,10 +20,10 @@ function SeekIndex() {
     <SiteShell>
       <main className="mx-auto max-w-6xl px-5 py-12">
         <p className="text-sm font-medium text-brass">임차인 구함</p>
-        <h1 className="mt-2 max-w-2xl font-serif text-4xl font-semibold">들어올 분을 찾습니다</h1>
+        <h1 className="mt-2 max-w-2xl font-serif text-4xl font-semibold">들어오실 분을 찾습니다</h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted">
-          임대인인 아트리오가 주택의 임차인을 구합니다. 개인이 직접 거주하는 계약과, 법인이 사택으로 빌리는
-          계약을 나눕니다. 호실과 금액은 공개 매물처럼 적지 않고, 본점에서 등기부와 함께 안내합니다.
+          주식회사 아트리오가 빌려 드리는 집에 들어오실 분을 찾습니다. 직접 사실 분과, 사택으로 빌리실 회사를
+          나눠 적었습니다. 호실과 금액은 매물처럼 올리지 않고, 등기부를 같이 보면서 안내드립니다.
         </p>
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {seeks.map((post) => (

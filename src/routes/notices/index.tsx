@@ -22,8 +22,8 @@ function NoticeIndex() {
         <p className="text-sm font-medium text-brass">공지사항</p>
         <h1 className="mt-2 max-w-2xl font-serif text-4xl font-semibold">회사가 올리는 소식</h1>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted">
-          개업과 장기주택임대 등록 신고를 먼저 올립니다. 등록번호와 대상 주택은 본점의 등록증명서로
-          확인합니다. 이 목록이 증명서를 대신하지 않습니다.
+          문을 열었다는 소식과, 장기주택임대 등록을 신고했다는 소식을 먼저 올립니다. 등록번호와 대상 집은
+          본점에서 등록증명서로 확인해 주세요. 이 목록이 증명서를 대신하지는 않습니다.
         </p>
         <ul className="mt-10 divide-y divide-line border-y border-line">
           {notices.map((post) => (
