@@ -18,11 +18,12 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
         <Link
           to="/"
-          className="flex items-center"
+          className="flex items-center gap-2"
           aria-label={`${OFFICE.name} 홈`}
           onClick={() => setOpen(false)}
         >
-          <img src={asset("/logo-full.jpg")} alt={OFFICE.name} className="h-10 w-auto" />
+          <img src={asset("/logo.svg")} alt="" className="h-8 w-auto" />
+          <span className="text-sm font-bold tracking-tight text-ink sm:text-base">주식회사 아트리오</span>
         </Link>
 
         <nav aria-label="주 메뉴" className="hidden items-center gap-8 text-sm font-medium text-muted lg:flex">
@@ -100,7 +101,7 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-card text-ink">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-3">
         <div>
-          <img src={asset("/logo-full.jpg")} alt={OFFICE.name} className="h-12 w-auto" />
+          <img src={asset("/logo-full.jpg")} alt={OFFICE.name} className="h-14 w-auto" />
           <p className="mt-2 text-sm text-muted">{OFFICE.works.join(" · ")}</p>
           <nav aria-label="하단 메뉴" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
             <Link to="/notices" className="hover:text-ink">
