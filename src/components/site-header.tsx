@@ -22,7 +22,7 @@ export function SiteHeader() {
           aria-label={`${OFFICE.name} 홈`}
           onClick={() => setOpen(false)}
         >
-          <img src={asset("/logo.svg")} alt="" className="h-8 w-auto" />
+          <img src={asset("/logo-icon.jpg")} alt="" className="h-8 w-auto" />
           <span className="text-sm font-bold tracking-tight text-ink sm:text-base">주식회사 아트리오</span>
         </Link>
 
