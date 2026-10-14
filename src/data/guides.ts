@@ -17,16 +17,32 @@ export type Guide = {
   takeaway: string[];
 };
 
+/** 기본 경로(GitHub Pages 하위 경로 대응)를 붙인 정적 파일 주소 */
+export const asset = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
+
+/**
+ * 회사 기본 정보. 법인 설립 전이므로 확정되지 않은 항목은 PLACEHOLDER로 둡니다.
+ * 설립·사업자등록 후 실제 값으로 바꿔 주세요.
+ */
+export const PLACEHOLDER = "법인 설립 후 기재 예정";
+
 export const OFFICE = {
   name: "주식회사 아트리오",
   nameEn: "Atrio Co., Ltd.",
-  area: "세종특별자치시",
-  address: "세종특별자치시",
-  works: ["주택 임대", "비주거용 건물 임대", "부동산 관리", "인테리어 기획"],
+  ceo: PLACEHOLDER,
+  bizNo: PLACEHOLDER,
+  address: PLACEHOLDER,
+  tel: PLACEHOLDER,
+  email: PLACEHOLDER,
+  works: ["주택 임대(도시형생활주택 등 소형 주택)", "임대주택 운영·관리"],
+  outlook: "주택임대업을 중심으로, 향후 관련 분야로 사업 영역을 넓혀 갈 계획입니다.",
 };
 
 export const DISCLAIMER =
-  "이 글은 주식회사 아트리오가 주택임대차보호법의 일반적인 구조를 정리한 안내입니다. 법률 자문이 아니며, 개별 계약의 효력과 보증 한도는 등기부와 계약 시점에 따라 달라집니다.";
+  "이 글은 주식회사 아트리오가 주택임대차보호법 등 관련 제도의 일반적인 내용을 정리한 참고 자료이며, 법률 자문이 아닙니다. 법령과 보증 요건은 개정될 수 있고, 개별 계약의 효력은 등기부와 계약 시점의 사실관계에 따라 달라집니다. 구체적인 사안은 변호사·법무사 등 전문가나 관계 기관에 확인하시기 바랍니다.";
+
+export const DISCLAIMER_SHORT =
+  "이 홈페이지의 임차 가이드는 일반적인 참고 자료이며 법률 자문이 아닙니다. 개별 계약은 등기부와 계약서, 전문가 확인을 바탕으로 판단하시기 바랍니다.";
 
 export const guides: Guide[] = [
   {
@@ -36,7 +52,7 @@ export const guides: Guide[] = [
     category: "계약 전",
     minutes: 6,
     published: "2026.09.02",
-    cover: "/photos/keys.jpg",
+    cover: asset("/photos/keys.jpg"),
     coverAlt: "나무 탁자 위의 열쇠와 접힌 서류",
     sections: [
       {
@@ -64,7 +80,7 @@ export const guides: Guide[] = [
         heading: "표제부와 신탁",
         paragraphs: [
           "표제부에서 건물 용도를 봅니다. 주거가 아닌 공간은 주택임대차보호법의 보호 범위가 달라질 수 있습니다.",
-          "갑구에 신탁이 있으면 계약 상대는 위탁자가 아니라 수탁자입니다. 수탁자의 사전 동의 없이 낸 보증금은 돌려받기 어려운 사례가 많습니다. 공동소유라면 지분권자 전원의 동의와 날인이 필요합니다.",
+          "갑구에 신탁이 있으면 계약 상대는 위탁자가 아니라 수탁자입니다. 수탁자의 사전 동의 없이 맺은 계약은 보증금 반환을 주장하기 어려울 수 있습니다. 공동소유라면 지분권자 전원의 동의와 날인이 필요합니다.",
         ],
       },
     ],
@@ -82,7 +98,7 @@ export const guides: Guide[] = [
     category: "전세 안전",
     minutes: 7,
     published: "2026.09.18",
-    cover: "/photos/street.jpg",
+    cover: asset("/photos/street.jpg"),
     coverAlt: "초가을 은행나무가 있는 주택가 골목",
     sections: [
       {
@@ -128,7 +144,7 @@ export const guides: Guide[] = [
     category: "계약서",
     minutes: 6,
     published: "2026.09.29",
-    cover: "/photos/kitchen.jpg",
+    cover: asset("/photos/kitchen.jpg"),
     coverAlt: "아침 빛이 드는 빈 아파트 부엌",
     sections: [
       {
@@ -181,7 +197,7 @@ export const guides: Guide[] = [
     category: "권리 보호",
     minutes: 7,
     published: "2026.10.06",
-    cover: "/photos/entry.jpg",
+    cover: asset("/photos/entry.jpg"),
     coverAlt: "신발을 벗어 둔 아파트 현관",
     sections: [
       {
@@ -227,7 +243,7 @@ export const guides: Guide[] = [
     category: "입주·만기",
     minutes: 7,
     published: "2026.10.12",
-    cover: "/photos/living.jpg",
+    cover: asset("/photos/living.jpg"),
     coverAlt: "린넨 소파와 아침 빛이 있는 거실",
     sections: [
       {
