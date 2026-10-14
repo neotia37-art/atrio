@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#1e3a32">
-  <path fill-rule="evenodd" d="M11.52 10.24H52.48V47.31A6.45 6.45 0 0 1 46.03 53.76H17.97A6.45 6.45 0 0 1 11.52 47.31Z M20.48 10.24H43.52V44.80H20.48Z"/>
-  <circle cx="32.00" cy="24.76" r="3.05"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1e3a32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer house / atrium roof and walls -->
+  <path d="M14 30 L32 12 L50 30 V54 H14 Z"/>
+  <!-- Inner open atrium / doors -->
+  <path d="M26 54 V32"/>
+  <path d="M38 54 V32"/>
 </svg>
