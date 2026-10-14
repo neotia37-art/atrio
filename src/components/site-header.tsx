@@ -3,7 +3,12 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { DISCLAIMER_SHORT, OFFICE } from "@/data/guides";
 
-const routeLinks = [{ to: "/", label: "홈", exact: true }] as const;
+const routeLinks = [
+  { to: "/", label: "홈", exact: true },
+  { to: "/notices", label: "공지사항", exact: false },
+  { to: "/seek", label: "임차인 구함", exact: false },
+  { to: "/papers", label: "법인대표 서류", exact: false },
+] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -27,11 +32,11 @@ export function SiteHeader() {
             <span className="block font-serif text-base font-semibold tracking-tight">
               {OFFICE.name}
             </span>
-            <span className="block text-xs text-muted">{OFFICE.nameEn}</span>
+            <span className="hidden text-xs text-muted sm:block">{OFFICE.nameEn}</span>
           </span>
         </Link>
 
-        <nav aria-label="주 메뉴" className="hidden items-center gap-7 text-sm font-medium md:flex">
+        <nav aria-label="주 메뉴" className="hidden items-center gap-5 text-sm font-medium lg:flex">
           {routeLinks.map((link) => (
             <Link
               key={link.label}
@@ -46,17 +51,14 @@ export function SiteHeader() {
           <Link to="/" hash="office" className="text-muted hover:text-ink">
             회사 소개
           </Link>
-          <Link
-            to="/guides"
-            className="rounded-full bg-forest px-4 py-2 text-paper hover:opacity-90"
-          >
+          <Link to="/guides" className="rounded-full bg-forest px-4 py-2 text-paper hover:opacity-90">
             임차 가이드
           </Link>
         </nav>
 
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-lg border border-line md:hidden"
+          className="grid size-11 place-items-center rounded-lg border border-line lg:hidden"
           aria-expanded={open}
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           onClick={() => setOpen((value) => !value)}
@@ -66,7 +68,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav className="border-t border-line px-5 py-3 md:hidden">
+        <nav aria-label="주 메뉴" className="border-t border-line px-5 py-3 lg:hidden">
           <div className="flex flex-col">
             {routeLinks.map((link) => (
               <Link
@@ -86,11 +88,7 @@ export function SiteHeader() {
             >
               회사 소개
             </Link>
-            <Link
-              to="/guides"
-              className="border-b border-line py-3 text-base"
-              onClick={() => setOpen(false)}
-            >
+            <Link to="/guides" className="py-3 text-base" onClick={() => setOpen(false)}>
               임차 가이드
             </Link>
           </div>
@@ -116,11 +114,17 @@ export function SiteFooter() {
           <p className="font-serif text-xl">{OFFICE.name}</p>
           <p className="mt-2 text-sm text-forest-soft">{OFFICE.works.join(" · ")}</p>
           <nav aria-label="하단 메뉴" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <Link to="/" hash="office" className="underline-offset-4 hover:underline">
-              회사 소개
+            <Link to="/notices" className="underline-offset-4 hover:underline">
+              공지사항
             </Link>
             <Link to="/guides" className="underline-offset-4 hover:underline">
               임차 가이드
+            </Link>
+            <Link to="/papers" className="underline-offset-4 hover:underline">
+              법인대표 서류
+            </Link>
+            <Link to="/seek" className="underline-offset-4 hover:underline">
+              임차인 구함
             </Link>
           </nav>
         </div>

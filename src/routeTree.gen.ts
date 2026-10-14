@@ -12,6 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
+import { Route as NoticesIndexRouteImport } from './routes/notices/index'
+import { Route as NoticesSlugRouteImport } from './routes/notices/$slug'
+import { Route as PapersIndexRouteImport } from './routes/papers/index'
+import { Route as PapersSlugRouteImport } from './routes/papers/$slug'
+import { Route as SeekIndexRouteImport } from './routes/seek/index'
+import { Route as SeekSlugRouteImport } from './routes/seek/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +34,117 @@ const GuidesSlugRoute = GuidesSlugRouteImport.update({
   path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoticesIndexRoute = NoticesIndexRouteImport.update({
+  id: '/notices/',
+  path: '/notices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticesSlugRoute = NoticesSlugRouteImport.update({
+  id: '/notices/$slug',
+  path: '/notices/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PapersIndexRoute = PapersIndexRouteImport.update({
+  id: '/papers/',
+  path: '/papers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PapersSlugRoute = PapersSlugRouteImport.update({
+  id: '/papers/$slug',
+  path: '/papers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekIndexRoute = SeekIndexRouteImport.update({
+  id: '/seek/',
+  path: '/seek/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekSlugRoute = SeekSlugRouteImport.update({
+  id: '/seek/$slug',
+  path: '/seek/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/notices/$slug': typeof NoticesSlugRoute
+  '/papers/$slug': typeof PapersSlugRoute
+  '/seek/$slug': typeof SeekSlugRoute
   '/guides/': typeof GuidesIndexRoute
+  '/notices/': typeof NoticesIndexRoute
+  '/papers/': typeof PapersIndexRoute
+  '/seek/': typeof SeekIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/notices/$slug': typeof NoticesSlugRoute
+  '/papers/$slug': typeof PapersSlugRoute
+  '/seek/$slug': typeof SeekSlugRoute
   '/guides': typeof GuidesIndexRoute
+  '/notices': typeof NoticesIndexRoute
+  '/papers': typeof PapersIndexRoute
+  '/seek': typeof SeekIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/guides/$slug': typeof GuidesSlugRoute
+  '/notices/$slug': typeof NoticesSlugRoute
+  '/papers/$slug': typeof PapersSlugRoute
+  '/seek/$slug': typeof SeekSlugRoute
   '/guides/': typeof GuidesIndexRoute
+  '/notices/': typeof NoticesIndexRoute
+  '/papers/': typeof PapersIndexRoute
+  '/seek/': typeof SeekIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/guides/$slug' | '/guides/'
+  fullPaths:
+    | '/'
+    | '/guides/$slug'
+    | '/notices/$slug'
+    | '/papers/$slug'
+    | '/seek/$slug'
+    | '/guides/'
+    | '/notices/'
+    | '/papers/'
+    | '/seek/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/guides/$slug' | '/guides'
-  id: '__root__' | '/' | '/guides/$slug' | '/guides/'
+  to:
+    | '/'
+    | '/guides/$slug'
+    | '/notices/$slug'
+    | '/papers/$slug'
+    | '/seek/$slug'
+    | '/guides'
+    | '/notices'
+    | '/papers'
+    | '/seek'
+  id:
+    | '__root__'
+    | '/'
+    | '/guides/$slug'
+    | '/notices/$slug'
+    | '/papers/$slug'
+    | '/seek/$slug'
+    | '/guides/'
+    | '/notices/'
+    | '/papers/'
+    | '/seek/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
+  NoticesSlugRoute: typeof NoticesSlugRoute
+  PapersSlugRoute: typeof PapersSlugRoute
+  SeekSlugRoute: typeof SeekSlugRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
+  NoticesIndexRoute: typeof NoticesIndexRoute
+  PapersIndexRoute: typeof PapersIndexRoute
+  SeekIndexRoute: typeof SeekIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,13 +170,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notices/': {
+      id: '/notices/'
+      path: '/notices'
+      fullPath: '/notices/'
+      preLoaderRoute: typeof NoticesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notices/$slug': {
+      id: '/notices/$slug'
+      path: '/notices/$slug'
+      fullPath: '/notices/$slug'
+      preLoaderRoute: typeof NoticesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/papers/': {
+      id: '/papers/'
+      path: '/papers'
+      fullPath: '/papers/'
+      preLoaderRoute: typeof PapersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/papers/$slug': {
+      id: '/papers/$slug'
+      path: '/papers/$slug'
+      fullPath: '/papers/$slug'
+      preLoaderRoute: typeof PapersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seek/': {
+      id: '/seek/'
+      path: '/seek'
+      fullPath: '/seek/'
+      preLoaderRoute: typeof SeekIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seek/$slug': {
+      id: '/seek/$slug'
+      path: '/seek/$slug'
+      fullPath: '/seek/$slug'
+      preLoaderRoute: typeof SeekSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GuidesSlugRoute: GuidesSlugRoute,
+  NoticesSlugRoute: NoticesSlugRoute,
+  PapersSlugRoute: PapersSlugRoute,
+  SeekSlugRoute: SeekSlugRoute,
   GuidesIndexRoute: GuidesIndexRoute,
+  NoticesIndexRoute: NoticesIndexRoute,
+  PapersIndexRoute: PapersIndexRoute,
+  SeekIndexRoute: SeekIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
