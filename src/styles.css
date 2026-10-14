@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Noto Sans KR", system-ui, sans-serif;
-  --font-serif: "Noto Serif KR", "Noto Sans KR", serif;
-  --color-paper: #f3eee6;
-  --color-card: #fffdf8;
-  --color-ink: #1c1914;
-  --color-muted: #6d645a;
+  --font-sans: "Pretendard Variable", Pretendard, "Noto Sans KR", system-ui, sans-serif;
+  --font-serif: "Pretendard Variable", Pretendard, "Noto Sans KR", system-ui, sans-serif;
+  --color-paper: #ffffff;
+  --color-card: #f2f4f6;
+  --color-ink: #191f28;
+  --color-muted: #6b7684;
   --color-forest: #1e3a32;
-  --color-forest-soft: #e6efe9;
-  --color-brass: #8c6239;
-  --color-line: #e3d8c8;
+  --color-forest-soft: #eef3f1;
+  --color-brass: #4e5968;
+  --color-line: #e5e8eb;
   --color-danger: #8a3e32;
   --aspect-photo: 3 / 2;
 }
