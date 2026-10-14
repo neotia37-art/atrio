@@ -18,12 +18,11 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center"
           aria-label={`${OFFICE.name} 홈`}
           onClick={() => setOpen(false)}
         >
-          <img src={asset("/logo-icon.jpg")} alt="" className="h-8 w-auto" />
-          <span className="text-sm font-bold tracking-tight text-ink sm:text-base">주식회사 아트리오</span>
+          <img src={asset("/logo-full.jpg")} alt={OFFICE.name} className="h-10 w-auto" />
         </Link>
 
         <nav aria-label="주 메뉴" className="hidden items-center gap-8 text-sm font-medium text-muted lg:flex">
